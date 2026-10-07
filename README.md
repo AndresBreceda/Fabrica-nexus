@@ -1,5 +1,4 @@
 # 🏭 Fabrica-nexus
-
 > **Production Intelligence Platform**
 > Plataforma para la gestión, análisis y visualización de información relacionada con procesos de producción industrial.
 
@@ -9,21 +8,15 @@ El proyecto se desarrolla como un entorno de aprendizaje y experimentación para
 
 🚧 **Estado:** En desarrollo
 
----
-
 ## 🎯 Objetivo
 
 Fabrica-nexus busca construir una plataforma capaz de centralizar información relacionada con la producción y transformarla en información útil para la toma de decisiones.
-
----
 
 ## 🧠 Enfoque de desarrollo
 
 El proyecto utiliza un enfoque de **Spec-Driven Development (SDD)** para definir y organizar el desarrollo antes de implementar nuevas funcionalidades.
 
 La idea es utilizar especificaciones claras como punto de partida para que las decisiones técnicas, la implementación y las pruebas estén alineadas.
-
----
 
 ## 🛠️ Tecnologías
 
@@ -58,8 +51,6 @@ La idea es utilizar especificaciones claras como punto de partida para que las d
 
 > El stack puede evolucionar durante el desarrollo del proyecto.
 
----
-
 ## 🏗️ Arquitectura
 
 El proyecto está organizado como un monorepo:
@@ -89,8 +80,6 @@ Fabrica-nexus/
 ```
 
 La estructura está diseñada para mantener separadas las responsabilidades del frontend, backend y documentación del proceso de desarrollo.
-
----
 
 ## 📊 Funcionalidades previstas
 
@@ -129,7 +118,6 @@ La estructura está diseñada para mantener separadas las responsabilidades del 
 * Roles y permisos.
 * Diferentes interfaces según el tipo de usuario.
 
----
 
 ## 🗺️ Roadmap
 
@@ -165,7 +153,6 @@ La documentación del proyecto se encuentra dentro del repositorio:
 | `MEMORY.md`       | Estado, decisiones y aprendizajes del proyecto |
 | `specs/`          | Especificaciones de las funcionalidades        |
 
----
 
 ## 🤖 Desarrollo asistido por IA
 
@@ -191,25 +178,12 @@ Iteration
 
 Esto permite experimentar con agentes, subagentes y herramientas de IA manteniendo una estructura y unos criterios técnicos definidos.
 
----
-
-## 🚧 Estado actual
-
-Fabrica-nexus se encuentra actualmente en **fase inicial de desarrollo**.
-
-El proyecto evolucionará progresivamente desde la definición de la arquitectura y las especificaciones hasta la construcción de un MVP funcional.
-
-Los cambios, decisiones técnicas y aprendizajes relevantes se irán documentando durante el desarrollo.
-
----
-
 ## 👨‍💻 Autor
 
 **Andrés Esquivel**
 
 Software Developer interesado en **Frontend, Backend, automatización, DevOps y desarrollo asistido por IA**.
 
----
 
 ## 📄 License
 
