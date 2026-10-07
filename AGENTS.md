@@ -82,6 +82,9 @@ When requirements are ambiguous, ask before making assumptions.
 -Si algo se convierte en una regla permanente muevelo a "AGENTS.md" en lugar de dejarlo en la memoria
 -No guardes datos sensibles ahí (Claves, Token o datos personales)
 
+## Reglas
+-Lee `docs/constituion.md` y la spec activa (`specs/NNN-*/`) antes de tocar el codigo
+
 ## Límites
 -✅ Siempre: Follow repository conventions.
 -✅ Siempre: Reuse existing patterns.
