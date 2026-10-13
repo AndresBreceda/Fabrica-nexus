@@ -1,23 +1,26 @@
 # MEMORY.md - Fabrica-nexus
 
-Memoria del proyecto entre sesiones. Maximo 50 lineas, resume o elimina lo que ya no aporte.
+Memoria del proyecto entre sesiones. Máximo 50 líneas, resume o elimina lo que ya no aporte.
 
 ## Estado actual
-- Frontend modular implementado y verificado en `Frontend/` (SPEC-001).
-- Vistas activas: Dashboard (6 KPIs + Telemetría), Orders, Order Details, Inventory, Analytics (OEE), Alerts, Users, Settings.
-- Stack: React 19 + TypeScript + Vite + Tailwind CSS v4 + React Router v7 + Lucide Icons.
+- Frontend modular verificado en `frontend/` (React 19 + TypeScript + Vite + Tailwind CSS v4).
+- Backend implementado en `backend/` con FastAPI, SQLAlchemy 2.0, bcrypt y PyJWT (SPEC-003).
+- Capa de base de datos en `database/` con Alembic (migración de `users`) y script de seed.
+- Orquestación lista con `docker-compose.yml` (PostgreSQL 16 + FastAPI).
+- Suite de pruebas de autenticación y seguridad pasando al 100% (15/15 tests en `backend/tests/`).
 
 ## Decisiones (y por qué)
-- **Feature-Based Modular Architecture (`src/modules/*`)**: Separa dominios industriales para facilitar el crecimiento sin acoplamiento.
-- **Tokens de Google Stitch integrados**: Paleta `#006194` (primary), `#006a63` (secondary), `#faf8ff` (surface) y fuentes `Inter` / `JetBrains Mono` con soporte `tnum` (tabular-nums).
-- **TypeScript strict con `verbatimModuleSyntax`**: Todos los tipos importados explícitamente mediante `import type { ... }`.
-- **Aprobación previa de dependencias y SPEC-001**: Conforme a la Constitución (Principio 1) y `AGENTS.md`.
+- **Bcrypt nativo y PyJWT**: Garantiza compatibilidad robusta en Python 3.13 sin dependencias obsoletas (`passlib`/`crypt`).
+- **Esquema de Tokens Dual**: Access token (60 min) y Refresh token (7 días) con validación estricta de claims (`type`).
+- **Modelos e índices**: Tabla `users` indexada en `email` (único) y `id` (autoincremental).
+- **SQLite en memoria para pruebas**: Aislamiento rápido y sin dependencias externas para CI/CD y tests locales.
+- **Alembic con path relativo `%(here)s`**: Permite ejecutar migraciones tanto desde la raíz como desde `database/` o dentro de Docker.
 
 ## Aprendizajes y errores a evitar
-- `verbatimModuleSyntax` requiere `import type` para evitar errores de compilación TS1484.
-- `noUnusedLocals` activo en TS: limpiar imports antes de enviar a build.
-- Verificar siempre compilación local antes de marcar tarea como finalizada (`tsc -b && vite build`).
+- Pydantic `EmailStr` requiere explícitamente `email-validator` en requirements.
+- SQLite en memoria exige tipo `Integer` en primary key para mapear con `ROWID` autoincremental sin colisiones.
+- Ejecutar `pytest` y `tsc -b && vite build` tras cambios para prevenir regresiones.
 
 ## Próximos pasos
-- Conexión con los endpoints de API en FastAPI (`backend/`).
-- Integración de WebSocket / SSE para telemetría en tiempo real de sensores.
+- Conexión del frontend (`/login`) con el endpoint `POST /api/v1/auth/login`.
+- Almacenamiento seguro de tokens y manejo del estado de sesión en React.

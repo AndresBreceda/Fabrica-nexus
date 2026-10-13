@@ -42,15 +42,14 @@ export const Sidebar: React.FC<SidebarProps> = ({ alertCount = 3 }) => {
       <div className="flex flex-col flex-1 min-h-0">
         {/* Brand Header */}
         <div className="h-16 px-4 flex items-center gap-3 border-b border-[#e2e8f0]">
-          <div className="w-9 h-9 rounded bg-[#006194] flex items-center justify-center text-white font-bold text-lg shadow-sm">
-            N
-          </div>
+          <img src="/favicon.png" alt="Nexus" className="w-9 h-9 rounded flex items-center justify-center text-white font-bold text-lg shadow-sm">
+          </img>
           <div className="flex flex-col min-w-0">
             <span className="text-sm font-bold text-[#0f172a] tracking-tight leading-tight">
               NEXUS
             </span>
             <span className="text-[10px] font-semibold text-[#006194] uppercase tracking-wider">
-              Intelligence Core
+              Enterprise Portal
             </span>
           </div>
         </div>

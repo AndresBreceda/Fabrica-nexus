@@ -19,8 +19,8 @@ en especificaciones técnicas claras.
 - Haz preguntas cuando exista ambigüedad.
 - No asumas requisitos importantes.
 - Revisa constitution.md y MEMORY.md.
-- La implementación solamente puede comenzar cuando exista
-  una especificación aprobada.
+- La implementación solamente puede comenzar cuando exista una especificación aprobada.
+- Al terminar de escribir la spec, deten el proceso y solo continualo hasta que el usuario de aprovación explicita de la spec
 
 ## Proceso
 

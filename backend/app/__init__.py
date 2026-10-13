@@ -1,0 +1,1 @@
+"""Fabrica-nexus backend package."""

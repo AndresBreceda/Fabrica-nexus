@@ -1,11 +1,18 @@
 import React from 'react';
-import { Search, Factory, Calendar, Bell, ChevronDown } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
+import { Search, Factory, Calendar, Bell, ChevronDown, LogOut } from 'lucide-react';
 
 interface HeaderProps {
   onSearch?: (query: string) => void;
 }
 
 export const Header: React.FC<HeaderProps> = () => {
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    navigate('/login');
+  };
+
   return (
     <header className="fixed top-0 left-64 right-0 h-16 bg-white/95 backdrop-blur-md z-40 flex items-center justify-between px-6 border-b border-[#e2e8f0]">
       {/* Search & Plant Selector */}
@@ -48,14 +55,23 @@ export const Header: React.FC<HeaderProps> = () => {
           <span className="absolute top-1.5 right-1.5 w-2 h-2 bg-[#dc2626] rounded-full"></span>
         </button>
 
-        <div className="flex items-center gap-2 pl-2 border-l border-[#e2e8f0] cursor-pointer">
-          <div className="w-7 h-7 rounded-full bg-[#006194] text-white flex items-center justify-center font-bold text-xs">
-            CM
+        <div className="flex items-center gap-2 pl-2 border-l border-[#e2e8f0]">
+          <div className="flex items-center gap-2 cursor-pointer">
+            <div className="w-7 h-7 rounded-full bg-[#006194] text-white flex items-center justify-center font-bold text-xs">
+              CM
+            </div>
+            <div className="hidden md:flex flex-col text-left leading-none">
+              <span className="text-xs font-semibold text-[#0f172a]">Carlos M.</span>
+              <span className="text-[10px] text-[#64748b] font-mono mt-0.5">Shift Supervisor</span>
+            </div>
           </div>
-          <div className="hidden md:flex flex-col text-left leading-none">
-            <span className="text-xs font-semibold text-[#0f172a]">Carlos M.</span>
-            <span className="text-[10px] text-[#64748b] font-mono mt-0.5">Shift Supervisor</span>
-          </div>
+          <button 
+            onClick={handleLogout}
+            className="ml-2 p-1.5 rounded-lg text-[#64748b] hover:bg-[#f8fafc] hover:text-[#dc2626] transition-colors"
+            title="Cerrar sesión"
+          >
+            <LogOut className="w-4 h-4" />
+          </button>
         </div>
       </div>
     </header>
